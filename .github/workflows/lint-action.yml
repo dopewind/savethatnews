@@ -24,3 +24,5 @@ jobs:
         with:
           black: true
           flake8: true
+          auto_fix: true
+            commit_message: 🚨 Fix code style issues with ${linter}
