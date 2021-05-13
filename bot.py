@@ -1,5 +1,5 @@
 # modules
-from push.telegram import telegram_bot_sendimage, telegram_bot_sendtext
+from push.telegram import telegram_bot_sendimage
 from push.twitter import tweet_image
 import requests  # main thing     # get the keys
 from dotenv import load_dotenv
@@ -7,9 +7,7 @@ import os                            # getenv
 import json
 import time
 
-from tools.img import img_download
 from push import *
-
 
 load_dotenv()
 newsapi_key = os.getenv("NEWSAPI_KEY")
@@ -35,13 +33,14 @@ for new in news['articles']:
     author = (str(new['source']['name']))
     title = (str(new['title']))
     description = (str(new['description']))
-    if description == None:
+    if description is None:
         description = ""
     image_url = (str(new['urlToImage']))
     full_story = (str(new['url']))
 
     # Telggram
-    telegram_messge = "From " + author + "\n \n" + title + "\n \n" + description + "\n \n" + \
+    telegram_messge = "From " + author + "\n \n" + \
+        title + "\n \n" + description + "\n \n" + \
         "[Full Story]({})".format(full_story)
 
     telegram_bot_sendimage(image_url, telegram_messge)
