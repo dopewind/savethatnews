@@ -41,7 +41,7 @@ def tweet_image(url, message):
     filename = url.split("/")[-1]
     request = requests.get(url, stream=True)
     if request.status_code == 200:
-        with open(filename, 'wb') as image:
+        with open(filename, "wb") as image:
             for chunk in request:
                 image.write(chunk)
 

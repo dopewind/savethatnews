@@ -19,9 +19,15 @@ def telegram_bot_sendtext(bot_message):
 
 
 def telegram_bot_sendimage(url, caption):
-    send_text = 'https://api.telegram.org/bot' + bot_token + \
-        '/sendPhoto?chat_id=@savethatnews&disable_web_page_preview=false&' + \
-        '&photo=' + url + '&parse_mode=Markdown&caption=' + caption
+    send_text = (
+        "https://api.telegram.org/bot"
+        + bot_token
+        + "/sendPhoto?chat_id=@savethatnews&disable_web_page_preview=false&"
+        + "&photo="
+        + url
+        + "&parse_mode=Markdown&caption="
+        + caption
+    )
 
     response = requests.get(send_text)
 

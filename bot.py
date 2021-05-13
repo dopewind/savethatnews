@@ -3,7 +3,7 @@ from push.telegram import telegram_bot_sendimage
 from push.twitter import tweet_image
 import requests  # main thing     # get the keys
 from dotenv import load_dotenv
-import os                            # getenv
+import os  # getenv
 import json
 import time
 
@@ -14,9 +14,7 @@ newsapi_key = os.getenv("NEWSAPI_KEY")
 
 # Get news
 
-url = ('https://newsapi.org/v2/top-headlines?'
-       'country=in&'
-       'apiKey=')
+url = "https://newsapi.org/v2/top-headlines?" "country=in&" "apiKey="
 
 url += newsapi_key
 
@@ -35,8 +33,8 @@ for new in news['articles']:
     description = (str(new['description']))
     if description is None:
         description = ""
-    image_url = (str(new['urlToImage']))
-    full_story = (str(new['url']))
+    image_url = str(new["urlToImage"])
+    full_story = str(new["url"])
 
     # Telggram
     telegram_messge = "From " + author + "\n \n" + \
@@ -47,8 +45,9 @@ for new in news['articles']:
 
     # Twitter
 
-    twitter_message = "From " + author + "\n \n" + title + "\n \n" + \
-        "Full story: " + url
+    twitter_message = (
+        "From " + author + "\n \n" + title + "\n \n" + "Full story: " + url
+    )
 
     tweet_image(image_url, twitter_message)
 
