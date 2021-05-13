@@ -41,22 +41,16 @@ for new in news['articles']:
     full_story = (str(new['url']))
 
     # Telggram
-    telgram_messge = "From " + author + "\n \n" + title + "\n \n" + description + "\n \n" + \
+    telegram_messge = "From " + author + "\n \n" + title + "\n \n" + description + "\n \n" + \
         "[Full Story]({})".format(full_story)
 
-    telegram_bot_sendimage(image_url, telgram_messge)
+    telegram_bot_sendimage(image_url, telegram_messge)
 
     # Twitter
 
-    time.sleep(2)
+    twitter_message = "From " + author + "\n \n" + title + "\n \n" + \
+        "Full story: " + url
 
+    tweet_image(image_url, twitter_message)
 
-# # # authentication of consumer key and secret
-# # auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-
-# # # authentication of access token and secret
-# # auth.set_access_token(access_token, access_token_secret)
-# # api = tweepy.API(auth)
-
-# # # update the status
-# # api.update_status(status="Hello Everyone !")
+    time.sleep(10)
