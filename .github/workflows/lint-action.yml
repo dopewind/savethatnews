@@ -27,8 +27,7 @@ jobs:
           auto_fix: true
           commit_message: 🚨 Fix code style issues with ${linter}
 
-
-    - uses: actions/setup-ruby@v1
+      - uses: actions/setup-ruby@v1
       - name: Send Webhook Notification
         if: always()
         env:
