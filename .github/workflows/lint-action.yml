@@ -25,7 +25,7 @@ jobs:
           black: true
           flake8: true
           auto_fix: true
-            commit_message: 🚨 Fix code style issues with ${linter}
+          commit_message: 🚨 Fix code style issues with ${linter}
 
 
     - uses: actions/setup-ruby@v1
