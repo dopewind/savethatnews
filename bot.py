@@ -28,19 +28,26 @@ except requests.exceptions.RequestException:
 news = json.loads(response.text)
 
 
-for new in news['articles']:
-    author = (str(new['source']['name']))
-    title = (str(new['title']))
-    description = (str(new['description']))
+for new in news["articles"]:
+    author = str(new["source"]["name"])
+    title = str(new["title"])
+    description = str(new["description"])
     if description is None:
         description = ""
     image_url = str(new["urlToImage"])
     full_story = str(new["url"])
 
     # Telggram
-    telegram_messge = "From " + author + "\n \n" + \
-        title + "\n \n" + description + "\n \n" + \
-        "[Full Story]({})".format(full_story)
+    telegram_messge = (
+        "From "
+        + author
+        + "\n \n"
+        + title
+        + "\n \n"
+        + description
+        + "\n \n"
+        + "[Full Story]({})".format(full_story)
+    )
 
     telegram_bot_sendimage(image_url, telegram_messge)
 
