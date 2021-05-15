@@ -54,7 +54,7 @@ for new in news["articles"]:
     # Twitter
 
     twitter_message = (
-        "From " + author + "\n \n" + title + "\n \n" + "Full story: " + url
+        "From " + author + "\n \n" + title + "\n \n" + "Full story: " + full_story
     )
 
     tweet_image(image_url, twitter_message)
