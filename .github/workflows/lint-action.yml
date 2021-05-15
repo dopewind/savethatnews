@@ -24,7 +24,7 @@ jobs:
         with:
           black: true
           flake8: false
-          mypy: true
+          mypy: false
           auto_fix: true
           commit_message: 🚨 Fix code style issues with ${linter}
 
