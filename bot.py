@@ -14,8 +14,7 @@ newsapi_key = os.getenv("NEWSAPI_KEY")
 
 # Get news
 
-url = "https://newsapi.org/v2/top-headlines?" + \
-    "country=in&" + "apiKey="
+url = "https://newsapi.org/v2/top-headlines?" + "country=in&" + "apiKey="
 
 url += newsapi_key
 
